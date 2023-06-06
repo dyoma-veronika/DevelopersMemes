@@ -1,15 +1,23 @@
 # DevelopersMemes
-На главном экране приложения отображается gif-изображение вместе с его описанием, полученным с сайта developerslife.ru.  
+On the main screen of the application, a GIF image is displayed along with its description obtained from the developerslife.ru website.
 
-Под изображением располагаются две кнопки:  
+Below the image, there are two buttons:
 
-Одна (кнопка «следующий») загружает следующий рандомный пост (вызывая метод API).  
+One button ("next") loads the next random post (by calling an API method).
 
-Вторая — позволяет вернуться к предыдущему посту, который мы сохранили в кэш после загрузки.  
+The second button allows the user to go back to the previous post, which was saved in the cache after loading.
 
-Получается такая структура: (изначально кнопка назад не активна, но уже есть какой-то пост, загруженный при старте) нажимаем на «следующий» → появляется пост и кнопка назад становится активна → нажимаем на «следующий» ещё раз → появляется новый пост и обе кнопки активны → нажимаем назад и попадаем на один пост назад (обе кнопки активны) → нажимаем ещё раз и попадаем на первую картинку (кнопка назад стала не активна снова). Теперь если кликнуть на «следующий» мы сначала должны пройти те посты, которые у нас были загружены, а потом как они кончатся — загружать новые.  
+The structure is as follows: (initially, the back button is inactive, but there is already a post loaded at startup) 
+- click on "next" -> a post appears, and the back button becomes active -> 
+click "next" again -> a new post appears, and both buttons are active -> 
+click back and go back one post (both buttons are active) -> 
+click again and go back to the first image (the back button becomes inactive again). 
+Now, if you click "next", we should go through the posts that were already loaded, and then, when they are finished, load new ones.
 
-Ответы от API закешированы для реализации переходов «назад». Предусмотрены различные состояния загрузки данных: ошибка загрузки, загрузка и успешная загрузка. Использованы JavaRx, Retrofit, Glide.
+API responses are cached to implement "back" transitions. 
+Different data loading states are handled: loading error, loading in progress, and successful loading. 
+Stack: JavaRx, Retrofit, and Glide.
+
 Latest             | Top         |  Hot
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/dyoma-veronika/DevelopersLife/blob/master/screenshots/device-2021-01-31-222038.png)   |![](https://github.com/dyoma-veronika/DevelopersLife/blob/master/screenshots/device-2021-01-31-222117.png) |![](https://github.com/dyoma-veronika/DevelopersLife/blob/master/screenshots/device-2021-01-31-222150.png)
